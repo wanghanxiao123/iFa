@@ -117,13 +117,12 @@
         </div>
     </section>
 
-
     <section class="hero is-light is-small">
         <div class="hero-body">
             <div class="container">
-                <div id="mesh-pages">
-                    <!-- Page 1 -->
-                    <div class="mesh-page" id="page-1">
+                <div id="results-carousel" class="carousel results-carousel">
+                    <!-- Slide 1 -->
+                    <div class="item">
                         <div class="columns">
                             <div class="column is-3 render_wrapper_small">
                                 <div id="mesh_1" class="render_div"></div>
@@ -154,8 +153,8 @@
                         </div>
                     </div>
                     
-                    <!-- Page 2 -->
-                    <div class="mesh-page" id="page-2" style="display: none;">
+                    <!-- Slide 2 -->
+                    <div class="item">
                         <div class="columns">
                             <div class="column is-3 render_wrapper_small">
                                 <div id="mesh_9" class="render_div"></div>
@@ -186,8 +185,8 @@
                         </div>
                     </div>
                     
-                    <!-- Page 3 -->
-                    <div class="mesh-page" id="page-3" style="display: none;">
+                    <!-- Slide 3 -->
+                    <div class="item">
                         <div class="columns">
                             <div class="column is-3 render_wrapper_small">
                                 <div id="mesh_17" class="render_div"></div>
@@ -218,8 +217,8 @@
                         </div>
                     </div>
                     
-                    <!-- Page 4 -->
-                    <div class="mesh-page" id="page-4" style="display: none;">
+                    <!-- Slide 4 -->
+                    <div class="item">
                         <div class="columns">
                             <div class="column is-3 render_wrapper_small">
                                 <div id="mesh_25" class="render_div"></div>
@@ -250,8 +249,8 @@
                         </div>
                     </div>
                     
-                    <!-- Page 5 -->
-                    <div class="mesh-page" id="page-5" style="display: none;">
+                    <!-- Slide 5 -->
+                    <div class="item">
                         <div class="columns">
                             <div class="column is-3 render_wrapper_small">
                                 <div id="mesh_33" class="render_div"></div>
@@ -281,22 +280,11 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Pagination controls -->
-                    <div class="pagination-controls" style="text-align: center; margin-top: 20px;">
-                        <button class="button is-small" onclick="changePage(1)">1</button>
-                        <button class="button is-small" onclick="changePage(2)">2</button>
-                        <button class="button is-small" onclick="changePage(3)">3</button>
-                        <button class="button is-small" onclick="changePage(4)">4</button>
-                        <button class="button is-small" onclick="changePage(5)">5</button>
-                    </div>
                 </div>
-                <div style="text-align: center; margin-top: 10px;">Press <b>G</b> to toggle wireframe. Press <b>R</b> to reset view. </div>
+                <div style="text-align: center;">Press <b>G</b> to toggle wireframe. Press <b>R</b> to reset view. </div>
             </div>
         </div>
     </section>
-    
-
 
     <section class="section">
         <div class="container is-max-desktop">
@@ -690,35 +678,6 @@
     
 
     </script>
-    <script>
-        // Add this function to handle page navigation
-        function changePage(pageNum) {
-            // Hide all pages
-            const pages = document.querySelectorAll('.mesh-page');
-            pages.forEach(page => {
-                page.style.display = 'none';
-            });
-            
-            // Show the selected page
-            document.getElementById('page-' + pageNum).style.display = 'block';
-            
-            // Update button highlighting
-            const buttons = document.querySelectorAll('.pagination-controls .button');
-            buttons.forEach(button => {
-                button.classList.remove('is-primary');
-            });
-            
-            // Highlight the clicked button
-            event.target.classList.add('is-primary');
-        }
-        
-        // Make sure the first page is displayed and first button is highlighted on load
-        window.addEventListener('load', function() {
-            document.getElementById('page-1').style.display = 'block';
-            document.querySelector('.pagination-controls .button').classList.add('is-primary');
-        });
-    </script>
-
 
 </body>
 
