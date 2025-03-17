@@ -403,39 +403,12 @@
 
     import { PLYLoader } from './js/PLYLoader.js';
     import { OrbitControls } from './js/OrbitControls.js'
-    let div_to_scene = {
-        "mesh_chair_0": {
+    let div_to_scene = {};
+    for (let i = 1; i <= 40; i++) {
+        div_to_scene["mesh_" + i] = {
             "geo": null,
-            "color": null,
-        },
-        "mesh_chair_1": {
-            "geo": null,
-            "color": null,
-        },
-        "mesh_chair_2": {
-            "geo": null,
-            "color": null,
-        },
-        "mesh_chair_3": {
-            "geo": null,
-            "color": null,
-        },
-        "mesh_car_0": {
-            "geo": null,
-            "color": null,
-        },
-        "mesh_car_1": {
-            "geo": null,
-            "color": null,
-        },
-        "mesh_car_2": {
-            "geo": null,
-            "color": null,
-        },
-        "mesh_car_3": {
-            "geo": null,
-            "color": null,
-        }
+            "color": null
+        };
     }
     let div_to_render_scene = {
         "mesh_style_0": {
@@ -703,6 +676,7 @@
         setup_render_divs("mesh_40", './models/objaverse/250.ply');
     };
     
+
     </script>
 
 </body>
