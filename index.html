@@ -104,76 +104,65 @@
     <section class="hero is-light is-small">
         <div class="hero-body">
             <div class="container">
-                <div id="mesh-pages">
-                    <!-- We'll use just one page structure and reload meshes -->
-                    <div class="mesh-page">
-                        <div class="columns">
-                            <div class="column is-3 render_wrapper_small">
-                                <div id="mesh_1" class="render_div"></div>
-                            </div>
-                            <div class="column is-3 render_wrapper_small">
-                                <div id="mesh_2" class="render_div"></div>
-                            </div>
-                            <div class="column is-3 render_wrapper_small">
-                                <div id="mesh_3" class="render_div"></div>
-                            </div>
-                            <div class="column is-3 render_wrapper_small">
-                                <div id="mesh_4" class="render_div"></div>
-                            </div>
+                <div id="mesh-display">
+                    <div class="columns">
+                        <div class="column is-3 render_wrapper_small">
+                            <div id="mesh_1" class="render_div"></div>
                         </div>
-                        <div class="columns">
-                            <div class="column is-3 render_wrapper_small">
-                                <div id="mesh_5" class="render_div"></div>
-                            </div>
-                            <div class="column is-3 render_wrapper_small">
-                                <div id="mesh_6" class="render_div"></div>
-                            </div>
-                            <div class="column is-3 render_wrapper_small">
-                                <div id="mesh_7" class="render_div"></div>
-                            </div>
-                            <div class="column is-3 render_wrapper_small">
-                                <div id="mesh_8" class="render_div"></div>
-                            </div>
+                        <div class="column is-3 render_wrapper_small">
+                            <div id="mesh_2" class="render_div"></div>
                         </div>
-                        <div class="columns">
-                            <div class="column is-3 render_wrapper_small">
-                                <div id="mesh_9" class="render_div"></div>
-                            </div>
-                            <div class="column is-3 render_wrapper_small">
-                                <div id="mesh_10" class="render_div"></div>
-                            </div>
-                            <div class="column is-3 render_wrapper_small">
-                                <div id="mesh_11" class="render_div"></div>
-                            </div>
-                            <div class="column is-3 render_wrapper_small">
-                                <div id="mesh_12" class="render_div"></div>
-                            </div>
+                        <div class="column is-3 render_wrapper_small">
+                            <div id="mesh_3" class="render_div"></div>
                         </div>
-                        <div class="columns">
-                            <div class="column is-3 render_wrapper_small">
-                                <div id="mesh_13" class="render_div"></div>
-                            </div>
-                            <div class="column is-3 render_wrapper_small">
-                                <div id="mesh_14" class="render_div"></div>
-                            </div>
-                            <div class="column is-3 render_wrapper_small">
-                                <div id="mesh_15" class="render_div"></div>
-                            </div>
-                            <div class="column is-3 render_wrapper_small">
-                                <div id="mesh_16" class="render_div"></div>
-                            </div>
+                        <div class="column is-3 render_wrapper_small">
+                            <div id="mesh_4" class="render_div"></div>
                         </div>
                     </div>
-                    
-                    <!-- Pagination controls -->
-                    <div class="pagination-controls" style="text-align: center; margin-top: 20px;">
-                        <button class="button is-small" onclick="changePage(1)">1</button>
-                        <button class="button is-small" onclick="changePage(2)">2</button>
-                        <button class="button is-small" onclick="changePage(3)">3</button>
+                    <div class="columns">
+                        <div class="column is-3 render_wrapper_small">
+                            <div id="mesh_5" class="render_div"></div>
+                        </div>
+                        <div class="column is-3 render_wrapper_small">
+                            <div id="mesh_6" class="render_div"></div>
+                        </div>
+                        <div class="column is-3 render_wrapper_small">
+                            <div id="mesh_7" class="render_div"></div>
+                        </div>
+                        <div class="column is-3 render_wrapper_small">
+                            <div id="mesh_8" class="render_div"></div>
+                        </div>
+                    </div>
+                    <div class="columns">
+                        <div class="column is-3 render_wrapper_small">
+                            <div id="mesh_9" class="render_div"></div>
+                        </div>
+                        <div class="column is-3 render_wrapper_small">
+                            <div id="mesh_10" class="render_div"></div>
+                        </div>
+                        <div class="column is-3 render_wrapper_small">
+                            <div id="mesh_11" class="render_div"></div>
+                        </div>
+                        <div class="column is-3 render_wrapper_small">
+                            <div id="mesh_12" class="render_div"></div>
+                        </div>
+                    </div>
+                    <div class="columns">
+                        <div class="column is-3 render_wrapper_small">
+                            <div id="mesh_13" class="render_div"></div>
+                        </div>
+                        <div class="column is-3 render_wrapper_small">
+                            <div id="mesh_14" class="render_div"></div>
+                        </div>
+                        <div class="column is-3 render_wrapper_small">
+                            <div id="mesh_15" class="render_div"></div>
+                        </div>
+                        <div class="column is-3 render_wrapper_small">
+                            <div id="mesh_16" class="render_div"></div>
+                        </div>
                     </div>
                 </div>
                 <div style="text-align: center; margin-top: 10px;">
-                    <div id="page-info" style="margin-bottom: 5px;">Page 1 of 3</div>
                     Press <b>G</b> to toggle wireframe. Press <b>R</b> to reset view.
                 </div>
             </div>
@@ -182,43 +171,40 @@
 
     <section class="section">
         <div class="container is-max-desktop">
-            <!-- Method. -->
-            <div class="columns is-centered">
-                <div class="column is-full-width">
-                    <h2 class="title is-3">Method</h2>
+            <!-- Paper overview. -->
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Overview</h2>
                     <div class="content has-text-justified">
                         <p>
-                            Our method introduces an interleaving approach to mesh generation that combines the benefits of full attention and linear attention mechanisms. By strategically integrating these two attention types, we achieve both computational efficiency and high-quality results.
+                            Text...
                         </p>
-                        <p>
-                            The key innovations of our approach include:
-                        </p>
-                        <ul>
-                            <li>An interleaving autoregressive framework that alternates between full and linear attention</li>
-                            <li>An hourglass architecture that leverages the inherent structure of mesh representations</li>
-                            <li>Optimized training and inference pipelines for improved efficiency</li>
-                        </ul>
+                        <!-- Add more paragraphs if needed -->
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+            <h2 class="title">BibTeX</h2>
+            <pre><code>@article{aaa,
+    author    = {},
+    title     = {},
+    journal   = {},
+    year      = {},
+}</code></pre>
+        </div>
+    </section>
+
     <footer class="footer">
         <div class="container">
-            <div class="content has-text-centered">
-                <a class="icon-link" href="#">
-                    <i class="fas fa-file-pdf"></i>
-                </a>
-                <a class="icon-link" href="#" class="external-link" disabled>
-                    <i class="fab fa-github"></i>
-                </a>
-            </div>
             <div class="columns is-centered">
                 <div class="column is-8">
                     <div class="content">
                         <p>
-                            This website is adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+                            This website template is from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
                         </p>
                     </div>
                 </div>
@@ -228,11 +214,13 @@
 
     <script type="module">
         import * as THREE from 'three';
-
         import { PLYLoader } from './js/PLYLoader.js';
         import { OrbitControls } from './js/OrbitControls.js';
         
-        // Initialize the dictionary to track div scenes
+        // List of specific model IDs to display
+        const modelIDs = [309, 435, 311, 195, 177, 125, 97, 86, 66, 12, 22, 46, 63, 148, 169, 291];
+        
+        // Store all scenes for each mesh div
         let div_to_scene = {};
         for (let i = 1; i <= 16; i++) {
             div_to_scene["mesh_" + i] = {
@@ -242,87 +230,35 @@
             };
         }
         
-        // Track orbit controls for each div
+        // Style-related divs (keep for compatibility)
+        let div_to_render_scene = {
+            "mesh_style_0": { "0": null, "1": null, "2": null, "geo": null },
+            "mesh_style_1": { "0": null, "1": null, "2": null, "geo": null },
+            "mesh_style_2": { "0": null, "1": null, "2": null, "geo": null },
+            "mesh_style_3": { "0": null, "1": null, "2": null, "geo": null }
+        };
+        
+        // Track orbit controls
         let list_of_orbit_controls = [];
         
-        // Define all model paths in an array
-        const allModels = [
-            // Page 1 (models 1-16)
-            './models/objaverse/12.ply',
-            './models/objaverse/22.ply',
-            './models/objaverse/46.ply',
-            './models/objaverse/63.ply',
-            './models/objaverse/96.ply',
-            './models/objaverse/97.ply',
-            './models/objaverse/98.ply',
-            './models/objaverse/100.ply',
-            './models/objaverse/86.ply',
-            './models/objaverse/76.ply',
-            './models/objaverse/66.ply',
-            './models/objaverse/120.ply',
-            './models/objaverse/116.ply',
-            './models/objaverse/125.ply',
-            './models/objaverse/126.ply',
-            './models/objaverse/127.ply',
-            
-            // Page 2 (models 17-32)
-            './models/objaverse/146.ply',
-            './models/objaverse/153.ply',
-            './models/objaverse/154.ply',
-            './models/objaverse/131.ply',
-            './models/objaverse/134.ply',
-            './models/objaverse/148.ply',
-            './models/objaverse/149.ply',
-            './models/objaverse/157.ply',
-            './models/objaverse/167.ply',
-            './models/objaverse/165.ply',
-            './models/objaverse/174.ply',
-            './models/objaverse/182.ply',
-            './models/objaverse/180.ply',
-            './models/objaverse/177.ply',
-            './models/objaverse/232.ply',
-            './models/objaverse/240.ply',
-            
-            // Page 3 (models 33-48)
-            './models/objaverse/243.ply',
-            './models/objaverse/205.ply',
-            './models/objaverse/229.ply',
-            './models/objaverse/196.ply',
-            './models/objaverse/197.ply',
-            './models/objaverse/195.ply',
-            './models/objaverse/252.ply',
-            './models/objaverse/250.ply',
-            './models/objaverse/261.ply',
-            './models/objaverse/262.ply',
-            './models/objaverse/263.ply',
-            './models/objaverse/271.ply',
-            './models/objaverse/291.ply',
-            './models/objaverse/314.ply',
-            './models/objaverse/309.ply',
-            './models/objaverse/310.ply'
-        ];
-        
-        let currentPage = 1;
+        // Flag for wireframe mode
         let wireframeEnabled = false;
         
-        // Function to handle wireframe toggle with G key
-        window.addEventListener('keydown', function(event) {
-            if (event.key === 'g' || event.key === 'G') {
+        // Toggle wireframe on 'g' key press
+        document.addEventListener('keydown', function(event) {
+            if (event.key.toLowerCase() === 'g') {
                 wireframeEnabled = !wireframeEnabled;
                 
-                // Apply to all visible meshes
-                for (let i = 1; i <= 16; i++) {
-                    const divId = "mesh_" + i;
-                    if (div_to_scene[divId] && div_to_scene[divId].scene) {
-                        div_to_scene[divId].scene.traverse(function(child) {
-                            if (child instanceof THREE.Mesh) {
-                                child.material.wireframe = wireframeEnabled;
-                            }
-                        });
+                // Apply to all meshes
+                for (let divId in div_to_scene) {
+                    if (div_to_scene[divId].color) {
+                        div_to_scene[divId].color.wireframe = wireframeEnabled;
                     }
                 }
-            } else if (event.key === 'r' || event.key === 'R') {
-                // Reset camera views
+            }
+            
+            // Reset view on 'r' key press
+            if (event.key.toLowerCase() === 'r') {
                 list_of_orbit_controls.forEach(control => {
                     control.reset();
                 });
@@ -421,86 +357,18 @@
             });
         };
         
-        // Function to clean up existing meshes when changing pages
-        function cleanupMeshes() {
-            // Remove orbit controls
-            if (list_of_orbit_controls.length > 0) {
-                list_of_orbit_controls.forEach(control => {
-                    if (control.dispose) {
-                        control.dispose();
-                    }
-                });
-                list_of_orbit_controls = [];
-            }
-            
-            for (let i = 1; i <= 16; i++) {
-                const divId = "mesh_" + i;
-                
-                // If there's an existing scene for this div, dispose of it
-                if (div_to_scene[divId] && div_to_scene[divId].scene) {
-                    const div = document.getElementById(divId);
-                    if (div && div.firstChild) {
-                        div.removeChild(div.firstChild);
-                    }
-                    
-                    // Reset in our tracking object
-                    div_to_scene[divId] = {
-                        "geo": null,
-                        "color": null,
-                        "scene": null
-                    };
-                }
-            }
-        }
-        
-        // Function to load meshes for a page
-        function loadMeshesForPage(pageNum) {
-            const startIndex = (pageNum - 1) * 16;
-            
-            for (let i = 1; i <= 16; i++) {
-                const modelIndex = startIndex + i - 1;
-                if (modelIndex < allModels.length) {
-                    setup_render_divs("mesh_" + i, allModels[modelIndex]);
-                }
-            }
-        }
-        
-        // Function to change pages - make it global
-        window.changePage = function(pageNum) {
-            if (pageNum === currentPage) return;
-            
-            // Update current page
-            currentPage = pageNum;
-            
-            // Clean up existing meshes
-            cleanupMeshes();
-            
-            // Load meshes for the new page
-            loadMeshesForPage(pageNum);
-            
-            // Update the page info text
-            document.getElementById('page-info').textContent = `Page ${pageNum} of 3`;
-            
-            // Update button highlighting
-            const buttons = document.querySelectorAll('.pagination-controls .button');
-            buttons.forEach((button, index) => {
-                if (index + 1 === pageNum) {
-                    button.classList.add('is-primary');
-                } else {
-                    button.classList.remove('is-primary');
-                }
-            });
-        };
-        
-        // When the page loads, initialize the first page
+        // When the page loads, initialize all 16 meshes
         window.onload = function() {
             let slider = document.getElementsByClassName("slider")[0];
             if (slider) {
                 slider.removeAttribute("tabIndex");
             }
             
-            loadMeshesForPage(1);
-            document.querySelector('.pagination-controls .button').classList.add('is-primary');
+            // Load each of the 16 specific models
+            for (let i = 1; i <= 16; i++) {
+                const modelID = modelIDs[i-1];
+                setup_render_divs("mesh_" + i, `./models/objaverse/${modelID}.ply`);
+            }
         };
     </script>
 </body>
