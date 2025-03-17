@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>iFlame: Interleaving Full and Linear Attention for Efficient Mesh Generation</title>
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
     <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
     <link rel="stylesheet" href="./static/css/bulma.min.css">
@@ -16,7 +17,32 @@
     <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     <link rel="stylesheet" href="./static/css/index.css">
-    <link rel="icon" href="./static/images/favicon.svg">
+
+    <style>
+		.render_wrapper {
+			position: relative;
+            height: 300px;
+         }
+        .render_wrapper_small {
+			position: relative;
+            height: 200px;
+         }
+		.render_div {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+        #interpolation-image-wrapper-car{
+            text-align: center;
+        }
+        #interpolation-image-wrapper-chair{
+            text-align: center;
+        }
+        .nested-columns {
+            margin-bottom: 0 !important;
+        }
+    </style>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -26,21 +52,24 @@
 </head>
 
 <body>
+
     <section class="hero">
         <div class="hero-body">
             <div class="container is-max-desktop">
                 <div class="columns is-centered">
                     <div class="column has-text-centered">
-                        <h1 class="title is-1 publication-title">iFlame: Interleaving Full and Linear Attention for Efficient Mesh Generation</h1>
-                        <div class="is-size-5 publication-authors">
+                        <h1 class="title is-1 publication-title">iFlame: Interleaving Full and Linear Attention for Efficient Mesh Generation</h1>    
+			<!-- <h2 class="is-size-3">ICCV 2025</h2> -->
+                        <div class="is-size-4 publication-authors">
                             <span class="author-block">
-                                <a href="https://zhuofan.net">Zhuofan Xia</a><sup>1</sup>,</span>
+                                <a href="#">Hanxiao Wang</a><sup>1,2</sup>,</span>
                             <span class="author-block">
                                 <a href="#">Biao Zhang</a><sup>2</sup>,</span>
                             <span class="author-block">
                                 <a href="#">Weize Quan</a><sup>1</sup>,</span>
                             <span class="author-block">
-                                <a href="#">Dong-Ming Yan</a><sup>1</sup>,</span>
+                                <a href="#">Dong-Ming Yan</a><sup>1</sup>,
+                            </span>
                             <span class="author-block">
                                 <a href="#">Peter Wonka</a><sup>2</sup>
                             </span>
@@ -55,14 +84,23 @@
                             <div class="publication-links">
                                 <!-- PDF Link. -->
                                 <span class="link-block">
-                                    <a href="#" class="external-link button is-normal is-rounded is-dark">
+                                    <a href="#"
+                                        class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon">
                                             <i class="fas fa-file-pdf"></i>
                                         </span>
                                         <span>Paper</span>
                                     </a>
                                 </span>
-                                <!-- Code Link. -->
+                                <span class="link-block">
+                                    <a class="external-link button is-normal is-rounded is-dark" href="#">
+                                        <span class="icon">
+                                            <i class="ai ai-arxiv"></i>
+                                        </span>
+                                        <span>arXiv</span>
+                                    </a>
+                                </span>
+                                <!-- Github Link. -->
                                 <span class="link-block">
                                     <a href="#" class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon">
@@ -79,6 +117,175 @@
         </div>
     </section>
 
+    <section class="hero is-light is-small">
+        <div class="hero-body">
+            <div class="container">
+                <div id="results-carousel" class="carousel results-carousel">
+                    <!-- Slide 1 -->
+                    <div class="item">
+                        <div class="columns">
+                            <div class="column is-3 render_wrapper_small">
+                                <div id="mesh_1" class="render_div"></div>
+                            </div>
+                            <div class="column is-3 render_wrapper_small">
+                                <div id="mesh_2" class="render_div"></div>
+                            </div>
+                            <div class="column is-3 render_wrapper_small">
+                                <div id="mesh_3" class="render_div"></div>
+                            </div>
+                            <div class="column is-3 render_wrapper_small">
+                                <div id="mesh_4" class="render_div"></div>
+                            </div>
+                        </div>
+                        <div class="columns">
+                            <div class="column is-3 render_wrapper_small">
+                                <div id="mesh_5" class="render_div"></div>
+                            </div>
+                            <div class="column is-3 render_wrapper_small">
+                                <div id="mesh_6" class="render_div"></div>
+                            </div>
+                            <div class="column is-3 render_wrapper_small">
+                                <div id="mesh_7" class="render_div"></div>
+                            </div>
+                            <div class="column is-3 render_wrapper_small">
+                                <div id="mesh_8" class="render_div"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 2 -->
+                    <div class="item">
+                        <div class="columns">
+                            <div class="column is-3 render_wrapper_small">
+                                <div id="mesh_9" class="render_div"></div>
+                            </div>
+                            <div class="column is-3 render_wrapper_small">
+                                <div id="mesh_10" class="render_div"></div>
+                            </div>
+                            <div class="column is-3 render_wrapper_small">
+                                <div id="mesh_11" class="render_div"></div>
+                            </div>
+                            <div class="column is-3 render_wrapper_small">
+                                <div id="mesh_12" class="render_div"></div>
+                            </div>
+                        </div>
+                        <div class="columns">
+                            <div class="column is-3 render_wrapper_small">
+                                <div id="mesh_13" class="render_div"></div>
+                            </div>
+                            <div class="column is-3 render_wrapper_small">
+                                <div id="mesh_14" class="render_div"></div>
+                            </div>
+                            <div class="column is-3 render_wrapper_small">
+                                <div id="mesh_15" class="render_div"></div>
+                            </div>
+                            <div class="column is-3 render_wrapper_small">
+                                <div id="mesh_16" class="render_div"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 3 -->
+                    <!-- <div class="item">
+                        <div class="columns">
+                            <div class="column is-3 render_wrapper_small">
+                                <div id="mesh_17" class="render_div"></div>
+                            </div>
+                            <div class="column is-3 render_wrapper_small">
+                                <div id="mesh_18" class="render_div"></div>
+                            </div>
+                            <div class="column is-3 render_wrapper_small">
+                                <div id="mesh_19" class="render_div"></div>
+                            </div>
+                            <div class="column is-3 render_wrapper_small">
+                                <div id="mesh_20" class="render_div"></div>
+                            </div>
+                        </div>
+                        <div class="columns">
+                            <div class="column is-3 render_wrapper_small">
+                                <div id="mesh_21" class="render_div"></div>
+                            </div>
+                            <div class="column is-3 render_wrapper_small">
+                                <div id="mesh_22" class="render_div"></div>
+                            </div>
+                            <div class="column is-3 render_wrapper_small">
+                                <div id="mesh_23" class="render_div"></div>
+                            </div>
+                            <div class="column is-3 render_wrapper_small">
+                                <div id="mesh_24" class="render_div"></div>
+                            </div>
+                        </div>
+                    </div> -->
+                    
+                    <!-- Slide 4 -->
+                    <!-- <div class="item">
+                        <div class="columns">
+                            <div class="column is-3 render_wrapper_small">
+                                <div id="mesh_25" class="render_div"></div>
+                            </div>
+                            <div class="column is-3 render_wrapper_small">
+                                <div id="mesh_26" class="render_div"></div>
+                            </div>
+                            <div class="column is-3 render_wrapper_small">
+                                <div id="mesh_27" class="render_div"></div>
+                            </div>
+                            <div class="column is-3 render_wrapper_small">
+                                <div id="mesh_28" class="render_div"></div>
+                            </div>
+                        </div>
+                        <div class="columns">
+                            <div class="column is-3 render_wrapper_small">
+                                <div id="mesh_29" class="render_div"></div>
+                            </div>
+                            <div class="column is-3 render_wrapper_small">
+                                <div id="mesh_30" class="render_div"></div>
+                            </div>
+                            <div class="column is-3 render_wrapper_small">
+                                <div id="mesh_31" class="render_div"></div>
+                            </div>
+                            <div class="column is-3 render_wrapper_small">
+                                <div id="mesh_32" class="render_div"></div>
+                            </div>
+                        </div>
+                    </div> -->
+                    
+                    <!-- Slide 5 -->
+                    <!-- <div class="item">
+                        <div class="columns">
+                            <div class="column is-3 render_wrapper_small">
+                                <div id="mesh_33" class="render_div"></div>
+                            </div>
+                            <div class="column is-3 render_wrapper_small">
+                                <div id="mesh_34" class="render_div"></div>
+                            </div>
+                            <div class="column is-3 render_wrapper_small">
+                                <div id="mesh_35" class="render_div"></div>
+                            </div>
+                            <div class="column is-3 render_wrapper_small">
+                                <div id="mesh_36" class="render_div"></div>
+                            </div>
+                        </div>
+                        <div class="columns">
+                            <div class="column is-3 render_wrapper_small">
+                                <div id="mesh_37" class="render_div"></div>
+                            </div>
+                            <div class="column is-3 render_wrapper_small">
+                                <div id="mesh_38" class="render_div"></div>
+                            </div>
+                            <div class="column is-3 render_wrapper_small">
+                                <div id="mesh_39" class="render_div"></div>
+                            </div>
+                            <div class="column is-3 render_wrapper_small">
+                                <div id="mesh_40" class="render_div"></div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+                <div style="text-align: center;">Press <b>G</b> to toggle wireframe. Press <b>R</b> to reset view. </div>
+            </div>
+        </div>
+    </section>
+
     <section class="section">
         <div class="container is-max-desktop">
             <!-- Abstract. -->
@@ -87,124 +294,92 @@
                     <h2 class="title is-3">Abstract</h2>
                     <div class="content has-text-justified">
                         <p>
-                            This paper describes a novel transformer-based network architecture for large mesh generation. While attention-based models have demonstrated remarkable performance in mesh generation, their quadratic computational complexity limits scalability, particularly for high-resolution 3D data. Conversely, linear attention mechanisms offer lower computational costs but often struggle to capture long-range dependencies, resulting in suboptimal outcomes.
+                        This paper describes a novel transformer-based network architecture for large mesh generation. While attention-based models have demonstrated remarkable performance in mesh generation, their quadratic computational complexity limits scalability, particularly for high-resolution 3D data. Conversely, linear attention mechanisms offer lower computational costs but often struggle to capture long-range dependencies, resulting in suboptimal outcomes.
                         </p>
                         <p>
-                            To address this trade-off, we propose an interleaving autoregressive mesh generation framework that combines the efficiency of linear attention with the expressive power of standard attention mechanisms. To further enhance efficiency and leverage the inherent structure of mesh representations, we integrate this interleaving approach into an hourglass architecture, which significantly boosts efficiency.
+                        To address this trade-off, we propose an interleaving autoregressive mesh generation framework that combines the efficiency of linear attention with the expressive power of standard attention mechanisms. To further enhance efficiency and leverage the inherent structure of mesh representations, we integrate this interleaving approach into an hourglass architecture, which significantly boosts efficiency.
                         </p>
                         <p>
-                            Our approach reduces training time while achieving performance comparable to pure attention-based models. To improve inference efficiency, we implemented...
+                        Our approach reduces training time while achieving performance comparable to pure attention-based models. To improve inference efficiency, we implemented a caching algorithm that almost doubles the speed and reduces the KV cache size by seven-eighths compared to the original Transformer. We evaluate our framework on ShapeNet and Objaverse, demonstrating its ability to generate high-quality 3D meshes efficiently. Our results indicate that the proposed interleaving framework effectively balances computational efficiency and generative performance, making it a practical solution for mesh generation. The training takes only 2 days with 4 GPUs on Objaverse.
                         </p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section class="hero is-light is-small">
-        <div class="hero-body">
-            <div class="container">
-                <div id="mesh-display">
-                    <div class="columns">
-                        <div class="column is-3 render_wrapper_small">
-                            <div id="mesh_1" class="render_div"></div>
-                        </div>
-                        <div class="column is-3 render_wrapper_small">
-                            <div id="mesh_2" class="render_div"></div>
-                        </div>
-                        <div class="column is-3 render_wrapper_small">
-                            <div id="mesh_3" class="render_div"></div>
-                        </div>
-                        <div class="column is-3 render_wrapper_small">
-                            <div id="mesh_4" class="render_div"></div>
-                        </div>
+            <!-- Overview. -->
+            <div class="columns is-centered" style="margin-top: 15px">
+                <div class="column is-full-width">
+                    <h2 class="title is-4">Method Overview</h2>
+                    <div class="content has-text-justified" style="padding-top: 15px">
+                        <p>Our method combines the efficiency of linear attention with the expressive power of standard attention mechanisms through an interleaving framework. We integrate this approach into an hourglass architecture to enhance efficiency and leverage the inherent structure of mesh representations.</p>
+                        <p>Key contributions of our approach include:</p>
+                        <ul>
+                            <li>An interleaving autoregressive mesh generation framework</li>
+                            <li>Integration with an hourglass architecture for improved efficiency</li>
+                            <li>A novel caching algorithm that nearly doubles inference speed</li>
+                            <li>Reduction of KV cache size by seven-eighths compared to original Transformers</li>
+                        </ul>
                     </div>
-                    <div class="columns">
-                        <div class="column is-3 render_wrapper_small">
-                            <div id="mesh_5" class="render_div"></div>
-                        </div>
-                        <div class="column is-3 render_wrapper_small">
-                            <div id="mesh_6" class="render_div"></div>
-                        </div>
-                        <div class="column is-3 render_wrapper_small">
-                            <div id="mesh_7" class="render_div"></div>
-                        </div>
-                        <div class="column is-3 render_wrapper_small">
-                            <div id="mesh_8" class="render_div"></div>
-                        </div>
-                    </div>
-                    <div class="columns">
-                        <div class="column is-3 render_wrapper_small">
-                            <div id="mesh_9" class="render_div"></div>
-                        </div>
-                        <div class="column is-3 render_wrapper_small">
-                            <div id="mesh_10" class="render_div"></div>
-                        </div>
-                        <div class="column is-3 render_wrapper_small">
-                            <div id="mesh_11" class="render_div"></div>
-                        </div>
-                        <div class="column is-3 render_wrapper_small">
-                            <div id="mesh_12" class="render_div"></div>
-                        </div>
-                    </div>
-                    <div class="columns">
-                        <div class="column is-3 render_wrapper_small">
-                            <div id="mesh_13" class="render_div"></div>
-                        </div>
-                        <div class="column is-3 render_wrapper_small">
-                            <div id="mesh_14" class="render_div"></div>
-                        </div>
-                        <div class="column is-3 render_wrapper_small">
-                            <div id="mesh_15" class="render_div"></div>
-                        </div>
-                        <div class="column is-3 render_wrapper_small">
-                            <div id="mesh_16" class="render_div"></div>
-                        </div>
-                    </div>
-                </div>
-                <div style="text-align: center; margin-top: 10px;">
-                    Press <b>G</b> to toggle wireframe. Press <b>R</b> to reset view.
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section class="section">
-        <div class="container is-max-desktop">
-            <!-- Paper overview. -->
-            <div class="columns is-centered has-text-centered">
-                <div class="column is-four-fifths">
-                    <h2 class="title is-3">Overview</h2>
+            <!-- Related Work -->
+            <!-- <div class="columns is-centered">
+                <div class="column is-full-width">
+                    <h2 class="title is-3">Related Links</h2>
+
                     <div class="content has-text-justified">
                         <p>
-                            Text...
+                            For more work on similar tasks, please check out:
                         </p>
-                        <!-- Add more paragraphs if needed -->
+                        <p>
+                            <a href="https://arxiv.org/abs/2002.10880">PolyGen: An Autoregressive Generative Model of 3D Meshes</a>
+                        </p>
+                        <p>
+                            <a href="https://meshdiffusion.github.io/">Mesh Diffusion</a>
+                        </p>
+                        <p>
+                            <a href="https://github.com/audi/MeshGPT">MeshGPT: Generating Triangle Meshes with Decoder-Only Transformers</a>
+                        </p>
                     </div>
                 </div>
-            </div>
+            </div> -->
+
+
         </div>
     </section>
 
     <section class="section" id="BibTeX">
         <div class="container is-max-desktop content">
             <h2 class="title">BibTeX</h2>
-            <pre><code>@article{aaa,
-    author    = {},
-    title     = {},
-    journal   = {},
-    year      = {},
-}</code></pre>
+            <pre>
+                <!-- <code>@inproceedings{wang2025iflame, -->
+  title={iFlame: Interleaving Full and Linear Attention for Efficient Mesh Generation},
+  author={Wang, Hanxiao and Zhang, Biao and Quan, Weize and Yan, Dong-Ming and Wonka, Peter},
+  <!-- booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)}, -->
+  year={2025}
+<!-- } -->
+</code>
+            </pre>
         </div>
     </section>
 
     <footer class="footer">
         <div class="container">
+            <div class="content has-text-centered">
+                <a class="icon-link" href="#">
+                    <i class="fas fa-file-pdf"></i>
+                </a>
+                <a class="icon-link" href="#" class="external-link">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
             <div class="columns is-centered">
                 <div class="column is-8">
                     <div class="content">
-                        <p>
-                            This website template is from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+                        <p style="text-align:center">
+                            Source code mainly borrowed from <a href="https://keunhong.com/">Keunhong Park</a>'s <a
+                                href="https://nerfies.github.io/">Nerfies website</a>.
                         </p>
                     </div>
                 </div>
@@ -212,165 +387,262 @@
         </div>
     </footer>
 
+    <!-- Import maps polyfill -->
+    <!-- Remove this when import maps will be widely supported -->
+    <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "./js/three.module.js"
+            }
+        }
+    </script>
     <script type="module">
         import * as THREE from 'three';
-        import { PLYLoader } from './js/PLYLoader.js';
-        import { OrbitControls } from './js/OrbitControls.js';
-        
-        // List of specific model IDs to display
-        const modelIDs = [309, 435, 311, 195, 177, 125, 97, 86, 66, 12, 22, 46, 63, 148, 169, 291];
-        
-        // Store all scenes for each mesh div
-        let div_to_scene = {};
-        for (let i = 1; i <= 16; i++) {
-            div_to_scene["mesh_" + i] = {
-                "geo": null,
-                "color": null,
-                "scene": null
-            };
+
+    import { PLYLoader } from './js/PLYLoader.js';
+    import { OrbitControls } from './js/OrbitControls.js'
+    let div_to_scene = {};
+    for (let i = 1; i <= 40; i++) {
+        div_to_scene["mesh_" + i] = {
+            "geo": null,
+            "color": null
+        };
+    }
+    let div_to_render_scene = {
+        "mesh_style_0": {
+            "0": null,
+            "1": null,
+            "2": null,
+            "geo": null,
+        },
+        "mesh_style_1": {
+            "0": null,
+            "1": null,
+            "2": null,
+            "geo": null,
+        },
+        "mesh_style_2": {
+            "0": null,
+            "1": null,
+            "2": null,
+            "geo": null,
+        },
+        "mesh_style_3": {
+            "0": null,
+            "1": null,
+            "2": null,
+            "geo": null,
+        },
+    }
+    let mouse_button_down = false;
+    let list_of_orbit_controls = []
+    let style_camera = null;
+    let render_colors = true;
+    let style_id = "0"
+
+    function setup_camera(div_name){
+        let container = document.getElementById(div_name);
+        let width = container.parentElement.clientWidth;
+        let height = container.parentElement.clientHeight;
+        let camera = new THREE.PerspectiveCamera( 35, width / height, 0.1, 50 );
+
+        let camera_init_position = new THREE.Vector3( 2.25, 1.525, -3.75 );
+        camera_init_position = camera_init_position.multiplyScalar(0.55)
+        camera.position.set(camera_init_position.x, camera_init_position.y, camera_init_position.z);
+        return camera;
+    }
+
+    function setup_render_divs(div_name, mesh_path){
+        let camera = setup_camera(div_name)
+        let orbit_control = create_render_div(camera, div_name, mesh_path)
+        list_of_orbit_controls.push(orbit_control)
+    }
+
+    function create_render_div(camera, div_id, mesh_path) {
+        let container;
+        let renderer, controls;
+
+        init();
+        animate();
+
+        function init() {
+
+            container = document.getElementById(div_id);
+            let width = container.parentElement.clientWidth;
+            let height = container.parentElement.clientHeight;
+
+
+            div_to_scene[div_id]["color"] = new THREE.Scene();
+            div_to_scene[div_id]["geo"] = new THREE.Scene();
+            div_to_scene[div_id]["color"].background = new THREE.Color( 0xffffff );
+            div_to_scene[div_id]["geo"].background = new THREE.Color( 0xffffff );
+
+            // PLY file
+
+            const loader = new PLYLoader();
+            loader.load( mesh_path, function ( geometry ) {
+
+                geometry.computeVertexNormals();
+                let material_color = new THREE.MeshStandardMaterial( { color: 0xaaaaaa, flatShading: true, side: THREE.DoubleSide } )
+                let material_geo = new THREE.MeshStandardMaterial( { color: 0x444444, flatShading: true, side: THREE.DoubleSide } )
+
+                let wireframe = new THREE.WireframeGeometry( geometry );
+                let line = new THREE.LineSegments( wireframe );
+                line.material.color.setHex(0x000000);
+
+                const mesh_color = new THREE.Mesh( geometry, material_color );
+                const mesh_geo = new THREE.Mesh( geometry, material_geo );
+
+                div_to_scene[div_id]["color"].add( mesh_color );
+                div_to_scene[div_id]["color"].add(line);
+                div_to_scene[div_id]["geo"].add( mesh_geo );
+
+            }, (xhr) => {
+                console.log((xhr.loaded / xhr.total) * 100 + '% loaded')
+            }, (error) => {
+                console.log(error)
+            }
+            );
+
+            // lights
+
+            div_to_scene[div_id]["color"].add( new THREE.HemisphereLight( 0x333333, 0x222222 ) );
+            div_to_scene[div_id]["geo"].add( new THREE.HemisphereLight( 0x333333, 0x222222 ) );
+            addShadowedLight(div_to_scene[div_id]["color"], 1, 1, 1, 0xffffff, 1.35 / 2 );
+            addShadowedLight(div_to_scene[div_id]["color"],  0.5, 1, - 1, 0xffffff, 1 / 2 );
+            addShadowedLight(div_to_scene[div_id]["geo"], 1, 1, 1, 0xffffff, 1.35 );
+            addShadowedLight(div_to_scene[div_id]["geo"],  0.5, 1, - 1, 0xffffff, 1 );
+
+            // renderer
+
+            renderer = new THREE.WebGLRenderer( { antialias: true } );
+            renderer.setPixelRatio( window.devicePixelRatio );
+            renderer.setSize( width, height);
+            renderer.outputEncoding = THREE.sRGBEncoding;
+
+            renderer.shadowMap.enabled = true;
+
+            container.appendChild( renderer.domElement );
+
+            controls = new OrbitControls(camera, renderer.domElement)
+            controls.enableDamping = false
+
+            // resize
+
+            window.addEventListener( 'resize', onWindowResize );
+
+    }
+        function onWindowResize() {
+            let width = container.clientWidth;
+            let height = container.clientHeight;
+            camera.aspect = width / height;
+            camera.updateProjectionMatrix();
+            renderer.setSize( width, height );
+        }
+        function animate() {
+            requestAnimationFrame( animate );
+            render();
+        }
+
+        function render() {
+            renderer.render( div_to_scene[div_id][render_colors ? "color" : "geo"], camera );
+            controls.update();
+        }
+
+        return controls;
+    }
+
+    function addShadowedLight(scene, x, y, z, color, intensity ) {
+
+        const directionalLight = new THREE.DirectionalLight( color, intensity );
+        directionalLight.position.set( x, y, z );
+        scene.add( directionalLight );
+
+        directionalLight.castShadow = true;
+
+        const d = 1;
+        directionalLight.shadow.camera.left = - d;
+        directionalLight.shadow.camera.right = d;
+        directionalLight.shadow.camera.top = d;
+        directionalLight.shadow.camera.bottom = - d;
+
+        directionalLight.shadow.camera.near = 1;
+        directionalLight.shadow.camera.far = 4;
+
+        directionalLight.shadow.mapSize.width = 1024;
+        directionalLight.shadow.mapSize.height = 1024;
+
+        directionalLight.shadow.bias = - 0.001;
+
+    }
+
+    document.addEventListener('keydown', logKey);
+
+    function logKey(evt) {
+        if (evt.keyCode === 71 && !mouse_button_down) {
+            switch_geometry()
+        }
+        if (evt.keyCode === 82 && !mouse_button_down) {
+            list_of_orbit_controls.forEach(oc => {
+                console.log(oc.object.position)
+            })
+            reset_orbit_controls()
+        }
+    }
+
+    function switch_geometry() {
+        render_colors = !render_colors
+    }
+
+    function reset_orbit_controls() {
+        list_of_orbit_controls.forEach(oc => {
+            oc.reset()
+        })
+    }
+
+    function set_style_0(){
+        style_id = "0"
+    }
+
+    function set_style_1(){
+        style_id = "1"
+    }
+
+    function set_style_2(){
+        style_id = "2"
+    }
+
+    document.body.onmousedown = function(evt) {
+        if (evt.button === 0)
+            mouse_button_down = true
+    }
+    document.body.onmouseup = function(evt) {
+        if (evt.button === 0)
+            mouse_button_down = false
+    }
+
+    const modelIDs = [309, 435, 311, 195, 177, 125, 97, 86, 66, 12, 22, 46, 63, 148, 169, 291];
+    // When the page loads, initialize all 16 meshes
+    window.onload = function() {
+        let slider = document.getElementsByClassName("slider")[0];
+        if (slider) {
+            slider.removeAttribute("tabIndex");
         }
         
-        // Style-related divs (keep for compatibility)
-        let div_to_render_scene = {
-            "mesh_style_0": { "0": null, "1": null, "2": null, "geo": null },
-            "mesh_style_1": { "0": null, "1": null, "2": null, "geo": null },
-            "mesh_style_2": { "0": null, "1": null, "2": null, "geo": null },
-            "mesh_style_3": { "0": null, "1": null, "2": null, "geo": null }
-        };
-        
-        // Track orbit controls
-        let list_of_orbit_controls = [];
-        
-        // Flag for wireframe mode
-        let wireframeEnabled = false;
-        
-        // Toggle wireframe on 'g' key press
-        document.addEventListener('keydown', function(event) {
-            if (event.key.toLowerCase() === 'g') {
-                wireframeEnabled = !wireframeEnabled;
-                
-                // Apply to all meshes
-                for (let divId in div_to_scene) {
-                    if (div_to_scene[divId].color) {
-                        div_to_scene[divId].color.wireframe = wireframeEnabled;
-                    }
-                }
-            }
-            
-            // Reset view on 'r' key press
-            if (event.key.toLowerCase() === 'r') {
-                list_of_orbit_controls.forEach(control => {
-                    control.reset();
-                });
-            }
-        });
-        
-        // Main function to setup a render div with a 3D model
-        window.setup_render_divs = function(div_id, model_path) {
-            const div = document.getElementById(div_id);
-            if (!div) return;
-            
-            // Create a scene
-            const scene = new THREE.Scene();
-            scene.background = new THREE.Color(0xf0f0f0);
-            
-            // Setup camera
-            const camera = new THREE.PerspectiveCamera(75, div.clientWidth / div.clientHeight, 0.1, 1000);
-            camera.position.z = 2;
-            
-            // Setup renderer
-            const renderer = new THREE.WebGLRenderer({ antialias: true });
-            renderer.setSize(div.clientWidth, div.clientHeight);
-            div.appendChild(renderer.domElement);
-            
-            // Add lights
-            const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
-            scene.add(ambientLight);
-            
-            const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
-            directionalLight.position.set(0, 1, 1).normalize();
-            scene.add(directionalLight);
-            
-            // Add orbit controls
-            const controls = new OrbitControls(camera, renderer.domElement);
-            controls.enableDamping = true;
-            controls.dampingFactor = 0.25;
-            controls.screenSpacePanning = false;
-            controls.maxPolarAngle = Math.PI;
-            controls.minDistance = 1;
-            controls.maxDistance = 10;
-            list_of_orbit_controls.push(controls);
-            
-            // Load the PLY model
-            const loader = new PLYLoader();
-            loader.load(model_path, function(geometry) {
-                geometry.computeVertexNormals();
-                
-                const material = new THREE.MeshStandardMaterial({
-                    color: 0x808080,
-                    flatShading: false,
-                    side: THREE.DoubleSide,
-                    wireframe: wireframeEnabled
-                });
-                
-                const mesh = new THREE.Mesh(geometry, material);
-                
-                // Center the mesh
-                geometry.computeBoundingBox();
-                const center = new THREE.Vector3();
-                geometry.boundingBox.getCenter(center);
-                geometry.translate(-center.x, -center.y, -center.z);
-                
-                // Scale mesh to fit in view
-                const box = new THREE.Box3().setFromObject(mesh);
-                const size = box.getSize(new THREE.Vector3());
-                const maxDim = Math.max(size.x, size.y, size.z);
-                const scale = 1.5 / maxDim;
-                mesh.scale.set(scale, scale, scale);
-                
-                scene.add(mesh);
-                
-                // Store references for later
-                div_to_scene[div_id] = {
-                    "geo": geometry,
-                    "color": material,
-                    "scene": scene
-                };
-                
-                // Animation loop
-                function animate() {
-                    requestAnimationFrame(animate);
-                    controls.update();
-                    renderer.render(scene, camera);
-                }
-                animate();
-            });
-            
-            // Handle window resize
-            window.addEventListener('resize', function() {
-                const width = div.clientWidth;
-                const height = div.clientHeight;
-                
-                camera.aspect = width / height;
-                camera.updateProjectionMatrix();
-                renderer.setSize(width, height);
-            });
-        };
-        
-        // When the page loads, initialize all 16 meshes
-        window.onload = function() {
-            let slider = document.getElementsByClassName("slider")[0];
-            if (slider) {
-                slider.removeAttribute("tabIndex");
-            }
-            
-            // Load each of the 16 specific models
-            for (let i = 1; i <= 16; i++) {
-                const modelID = modelIDs[i-1];
-                setup_render_divs("mesh_" + i, `./models/objaverse/${modelID}.ply`);
-            }
-        };
+        // Load each of the 16 specific models
+        for (let i = 1; i <= 16; i++) {
+            const modelID = modelIDs[i-1];
+            setup_render_divs("mesh_" + i, `./models/objaverse/${modelID}.ply`);
+        }
+    };
     </script>
+
 </body>
 
 </html>
+
+
+
+
