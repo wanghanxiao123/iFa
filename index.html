@@ -349,8 +349,8 @@
             let height = container.parentElement.clientHeight;
             let camera = new THREE.PerspectiveCamera( 35, width / height, 0.1, 50 );
 
-            let camera_init_position = new THREE.Vector3( 2.25, 1.525, -3.75 );
-            camera_init_position = camera_init_position.multiplyScalar(0.55)
+            let camera_init_position = new THREE.Vector3(0, 0, -3.75 );
+            camera_init_position = camera_init_position.multiplyScalar(1)
             camera.position.set(camera_init_position.x, camera_init_position.y, camera_init_position.z);
             return camera;
         }
