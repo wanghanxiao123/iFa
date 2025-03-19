@@ -119,7 +119,7 @@
     </section>
 
 
-    <section class="hero is-light is-small">
+    <!-- <section class="hero is-light is-small">
         <div class="hero-body">
             <div class="container">
                 <div class="columns is-multiline">
@@ -175,7 +175,58 @@
                 <div style="text-align: center;">Press <b>G</b> to toggle wireframe. Press <b>R</b> to reset view.</div>
             </div>
         </div>
+    </section> -->
+    <section class="hero is-light is-small">
+        <div class="hero-body">
+            <div class="container">
+                <div id="buttonContainer" style="margin-bottom: 20px;">
+                    <button class="meshButton" data-page="1">Page 1</button>
+                    <button class="meshButton" data-page="2">Page 2</button>
+                    <button class="meshButton" data-page="3">Page 3</button>
+                    <button class="meshButton" data-page="4">Page 4</button>
+                    <button class="meshButton" data-page="5">Page 5</button>
+                </div>
+                <div class="columns is-multiline" id="meshContainer">
+                    <!-- Meshes will be dynamically inserted here -->
+                </div>
+                <div style="text-align: center;">Press <b>G</b> to toggle wireframe. Press <b>R</b> to reset view.</div>
+            </div>
+        </div>
     </section>
+
+
+    <script>
+        const meshContainer = document.getElementById('meshContainer');
+        const buttons = document.querySelectorAll('.meshButton');
+
+        // Function to load meshes based on the selected page
+        function loadMeshes(page) {
+            meshContainer.innerHTML = ''; // Clear existing meshes
+            const start = (page - 1) * 16 + 1; // Calculate starting mesh ID
+            const end = start + 15; // Calculate ending mesh ID
+
+            for (let i = start; i <= end; i++) {
+                const column = document.createElement('div');
+                column.className = 'column is-3 render_wrapper_small';
+                const meshDiv = document.createElement('div');
+                meshDiv.id = `mesh_${i}`; // Mesh IDs (1 to 80)
+                meshDiv.className = 'render_div';
+                column.appendChild(meshDiv);
+                meshContainer.appendChild(column);
+            }
+        }
+
+        // Event listener for button clicks
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const page = parseInt(button.getAttribute('data-page'));
+                loadMeshes(page);
+            });
+        });
+
+        // Load the first page by default
+        loadMeshes(1);
+    </script>
 
     <section class="section">
         <div class="container is-max-desktop">
