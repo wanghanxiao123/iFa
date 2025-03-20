@@ -141,7 +141,7 @@
                                 </span>
                                 <!-- Github Link. -->
                                 <span class="link-block">
-                                    <a href="#" class="external-link button is-normal is-rounded is-dark">
+                                    <a href="https://github.com/hanxiaowang00/iFlame" class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon">
                                             <i class="fab fa-github"></i>
                                         </span>
@@ -149,6 +149,9 @@
                                     </a>
                                 </span>
                             </div>
+                        </div>
+                        <div class="is-size-5" style="margin-top: 10px;">
+                            A <span style="color: #e63946; font-weight: bold;">single-GPU</span> trainable <span style="color: #1d3557; font-weight: bold;">unconditional</span> <span style="color: #2a9d8f; font-weight: bold;">efficient</span> mesh generative model
                         </div>
                     </div>
                 </div>
@@ -245,131 +248,8 @@
             <div class="columns is-centered has-text-centered">
                         <div class="column is-four-fifths">
                             <h2 class="title is-3">Performance Comparison</h2>
-                            <div class="columns is-multiline">
-                                <!-- Inference Throughput Chart -->
-                                <div class="column is-one-fifth">
-                                    <h3 class="subtitle is-6">Inference Throughput (t/s)</h3>
-                                    <div class="chart-container" style="height: 200px;">
-                                        <div class="chart-bar-container">
-                                            <div class="chart-label">Full Attn</div>
-                                            <div class="chart-bar" style="height: 55%; background-color: rgba(255,0,0,0.5);">
-                                                <span class="chart-value">45.0</span>
-                                            </div>
-                                        </div>
-                                        <div class="chart-bar-container">
-                                            <div class="chart-label">Linear Attn</div>
-                                            <div class="chart-bar" style="height: 50%; background-color: rgba(0,255,0,0.5);">
-                                                <span class="chart-value">40.8</span>
-                                            </div>
-                                        </div>
-                                        <div class="chart-bar-container">
-                                            <div class="chart-label">Ours</div>
-                                            <div class="chart-bar" style="height: 100%; background-color: rgba(0,0,255,0.5);">
-                                                <span class="chart-value">81.9</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <!-- KV Cache Chart -->
-                                <div class="column is-one-fifth">
-                                    <h3 class="subtitle is-6">KV Cache (GB)</h3>
-                                    <div class="chart-container" style="height: 200px;">
-                                        <div class="chart-bar-container">
-                                            <div class="chart-label">Full Attn</div>
-                                            <div class="chart-bar" style="height: 100%; background-color: rgba(255,0,0,0.5);">
-                                                <span class="chart-value">6.6</span>
-                                            </div>
-                                        </div>
-                                        <div class="chart-bar-container">
-                                            <div class="chart-label">Linear Attn</div>
-                                            <div class="chart-bar" style="height: 0%; background-color: rgba(0,255,0,0.5);">
-                                                <span class="chart-value">0</span>
-                                            </div>
-                                        </div>
-                                        <div class="chart-bar-container">
-                                            <div class="chart-label">Ours</div>
-                                            <div class="chart-bar" style="height: 12%; background-color: rgba(0,0,255,0.5);">
-                                                <span class="chart-value">0.8</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Training Time Chart -->
-                                <div class="column is-one-fifth">
-                                    <h3 class="subtitle is-6">Training Time (min)</h3>
-                                    <div class="chart-container" style="height: 200px;">
-                                        <div class="chart-bar-container">
-                                            <div class="chart-label">Full Attn</div>
-                                            <div class="chart-bar" style="height: 100%; background-color: rgba(255,0,0,0.5);">
-                                                <span class="chart-value">422</span>
-                                            </div>
-                                        </div>
-                                        <div class="chart-bar-container">
-                                            <div class="chart-label">Linear Attn</div>
-                                            <div class="chart-bar" style="height: 72%; background-color: rgba(0,255,0,0.5);">
-                                                <span class="chart-value">304</span>
-                                            </div>
-                                        </div>
-                                        <div class="chart-bar-container">
-                                            <div class="chart-label">Ours</div>
-                                            <div class="chart-bar" style="height: 54%; background-color: rgba(0,0,255,0.5);">
-                                                <span class="chart-value">227</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Training Memory Chart -->
-                                <div class="column is-one-fifth">
-                                    <h3 class="subtitle is-6">Training Memory (GB)</h3>
-                                    <div class="chart-container" style="height: 200px;">
-                                        <div class="chart-bar-container">
-                                            <div class="chart-label">Full Attn</div>
-                                            <div class="chart-bar" style="height: 90%; background-color: rgba(255,0,0,0.5);">
-                                                <span class="chart-value">45</span>
-                                            </div>
-                                        </div>
-                                        <div class="chart-bar-container">
-                                            <div class="chart-label">Linear Attn</div>
-                                            <div class="chart-bar" style="height: 100%; background-color: rgba(0,255,0,0.5);">
-                                                <span class="chart-value">50</span>
-                                            </div>
-                                        </div>
-                                        <div class="chart-bar-container">
-                                            <div class="chart-label">Ours</div>
-                                            <div class="chart-bar" style="height: 56%; background-color: rgba(0,0,255,0.5);">
-                                                <span class="chart-value">28</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Face Accuracy Chart -->
-                                <div class="column is-one-fifth">
-                                    <h3 class="subtitle is-6">Face Accuracy</h3>
-                                    <div class="chart-container" style="height: 200px;">
-                                        <div class="chart-bar-container">
-                                            <div class="chart-label">Full Attn</div>
-                                            <div class="chart-bar" style="height: 100%; background-color: rgba(255,0,0,0.5);">
-                                                <span class="chart-value">78.3</span>
-                                            </div>
-                                        </div>
-                                        <div class="chart-bar-container">
-                                            <div class="chart-label">Linear Attn</div>
-                                            <div class="chart-bar" style="height: 92%; background-color: rgba(0,255,0,0.5);">
-                                                <span class="chart-value">71.9</span>
-                                            </div>
-                                        </div>
-                                        <div class="chart-bar-container">
-                                            <div class="chart-label">Ours</div>
-                                            <div class="chart-bar" style="height: 99.7%; background-color: rgba(0,0,255,0.5);">
-                                                <span class="chart-value">78.1</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="content has-text-centered">
+                                <img src="./static/teaser/compare.png" alt="Performance comparison of our iFlame architecture" style="max-width: 100%;">
                             </div>
                             
                             <!-- Chart Caption -->
@@ -383,15 +263,17 @@
                             </div>
                         </div>
             </div>
-        
 
 
             <!-- Overview. -->
             <div class="columns is-centered" style="margin-top: 15px">
                 <div class="column is-full-width">
                     <h2 class="title is-4">Method Overview</h2>
+                    <div class="content has-text-centered" style="margin-bottom: 20px;">
+                        <img src="./static/teaser/pipeline.pdf" alt="iFlame pipeline architecture" style="max-width: 100%;">
+                    </div>
                     <div class="content has-text-justified" style="padding-top: 15px">
-                        <p>Our method combines the efficiency of linear attention with the expressive power of standard attention mechanisms through an interleaving framework. We integrate this approach into an hourglass architecture to enhance efficiency and leverage the inherent structure of mesh representations.</p>
+                        <p><strong>iFlame</strong> is a <span style="color: #2a9d8f; font-weight: bold;">highly efficient</span> <span style="color: #1d3557; font-weight: bold;">unconditional</span> <span style="color: #e63946; font-weight: bold;">single-GPU trainable</span> mesh generation model that combines the efficiency of linear attention with the expressive power of standard attention mechanisms through an interleaving framework. We integrate this approach into an hourglass architecture to enhance efficiency and leverage the inherent structure of mesh representations.</p>
                         <p>Key contributions of our approach include:</p>
                         <ul>
                             <li>An interleaving autoregressive mesh generation framework</li>
@@ -450,7 +332,7 @@
                 <a class="icon-link" href="#">
                     <i class="fas fa-file-pdf"></i>
                 </a>
-                <a class="icon-link" href="#" class="external-link">
+                <a class="icon-link" href="https://github.com/hanxiaowang00/iFlame" class="external-link">
                     <i class="fab fa-github"></i>
                 </a>
             </div>
