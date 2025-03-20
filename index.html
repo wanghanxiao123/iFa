@@ -237,13 +237,32 @@
                         To address this trade-off, we propose an interleaving autoregressive mesh generation framework that combines the efficiency of linear attention with the expressive power of standard attention mechanisms. To further enhance efficiency and leverage the inherent structure of mesh representations, we integrate this interleaving approach into an hourglass architecture, which significantly boosts efficiency.
                         </p>
                         <p>
-                        Our approach reduces training time while achieving performance comparable to pure attention-based models. To improve inference efficiency, we implemented a caching algorithm that almost doubles the speed and reduces the KV cache size by seven-eighths compared to the original Transformer. We evaluate our framework on ShapeNet and Objaverse, demonstrating its ability to generate high-quality 3D meshes efficiently. Our results indicate that the proposed interleaving framework effectively balances computational efficiency and generative performance, making it a practical solution for mesh generation. The training takes only 2 days with 4 GPUs on Objaverse.
+                        Our approach reduces training time while achieving performance comparable to pure attention-based models. To improve inference efficiency, we implemented a caching algorithm that almost doubles the speed and reduces the KV cache size by seven-eighths compared to the original Transformer. We evaluate our framework on ShapeNet and Objaverse, demonstrating its ability to generate high-quality 3D meshes efficiently. Our results indicate that the proposed interleaving framework effectively balances computational efficiency and generative performance, making it a practical solution for mesh generation. The training takes only 2 days with 4 GPUs on 39k data with a maximum of 4k faces on Objaverse.
                         </p>
                     </div>
                 </div>
             </div>
 
-        
+            <!-- Overview. -->
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Method Overview</h2>
+                    <div class="content has-text-centered">
+                        <img src="./static/teaser/pipeline.pdf" alt="iFlame pipeline architecture" style="max-width: 100%;">
+                    </div>
+                    <div class="content has-text-justified" style="padding-top: 15px">
+                        <p><strong>iFlame</strong> is a <span style="color: #2a9d8f; font-weight: bold;">highly efficient</span> <span style="color: #1d3557; font-weight: bold;">unconditional</span> <span style="color: #e63946; font-weight: bold;">single-GPU trainable</span> mesh generation model that combines the efficiency of linear attention with the expressive power of standard attention mechanisms through an interleaving framework. We integrate this approach into an hourglass architecture to enhance efficiency and leverage the inherent structure of mesh representations.</p>
+                        <p>Key contributions of our approach include:</p>
+                        <ul>
+                            <li>An interleaving autoregressive mesh generation framework</li>
+                            <li>Integration with an hourglass architecture for improved efficiency</li>
+                            <li>A novel caching algorithm that nearly doubles inference speed</li>
+                            <li>Reduction of KV cache size by seven-eighths compared to original Transformers</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
             <!-- Performance Comparison -->
             <div class="columns is-centered has-text-centered">
                         <div class="column is-four-fifths">
@@ -265,25 +284,6 @@
             </div>
 
 
-            <!-- Overview. -->
-            <div class="columns is-centered" style="margin-top: 15px">
-                <div class="column is-full-width">
-                    <h2 class="title is-4">Method Overview</h2>
-                    <div class="content has-text-centered" style="margin-bottom: 20px;">
-                        <img src="./static/teaser/pipeline.pdf" alt="iFlame pipeline architecture" style="max-width: 100%;">
-                    </div>
-                    <div class="content has-text-justified" style="padding-top: 15px">
-                        <p><strong>iFlame</strong> is a <span style="color: #2a9d8f; font-weight: bold;">highly efficient</span> <span style="color: #1d3557; font-weight: bold;">unconditional</span> <span style="color: #e63946; font-weight: bold;">single-GPU trainable</span> mesh generation model that combines the efficiency of linear attention with the expressive power of standard attention mechanisms through an interleaving framework. We integrate this approach into an hourglass architecture to enhance efficiency and leverage the inherent structure of mesh representations.</p>
-                        <p>Key contributions of our approach include:</p>
-                        <ul>
-                            <li>An interleaving autoregressive mesh generation framework</li>
-                            <li>Integration with an hourglass architecture for improved efficiency</li>
-                            <li>A novel caching algorithm that nearly doubles inference speed</li>
-                            <li>Reduction of KV cache size by seven-eighths compared to original Transformers</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
 
             <!-- Related Work -->
             <!-- <div class="columns is-centered">
